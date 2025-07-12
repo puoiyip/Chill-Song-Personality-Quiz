@@ -26,24 +26,105 @@ var q3a4 = document.getElementById("q3a4");
 function score(obj, person) {
   obj[person] += 1;
   console.log("score = " +obj[person]);
+  console.log("laufey = " +outcomes.laufey)
   return obj[person];
 }
+function question() {
+  quesCount += 1;
+  console.log("question = " + quesCount);
+  if (quesCount >= 3) {
+    console.log("the quiz is done")
+    highestScore();
+    findResult();
+  }
+}
+function highestScore() {
+  var scoreArray = Object.values(outcomes); //takes the values of the properties and makes them into an array
+  console.log(scoreArray);
+  var max = Math.max(scoreArray); 
+}
+function findResult() {
+  if (outcomes.laufey == max) {
+    console.log("Promise by Laufey");
+  } else if (outcomes.grentperez == max) {
+    console.log("Us Without Me by grentperez");
+  } else if (outcomes.keshi == max) {
+    console.log("LIMBO by keshi");
+  } else if (outcomes.yungKai == max) {
+    console.log("blue by yung kai");
+  } else if (outcomes.waveToEarth == max) {
+    console.log("bad. by wave to earth");
+  } else {
+    console.log("error");
+  }
+}
 
-q1a1.addEventListener("click", score(outcomes, "waveToEarth"));
-q1a2.addEventListener("click", score(outcomes, "keshi"));
-q1a2.addEventListener("click", score(outcomes, "grentperez"));
-q1a3.addEventListener("click", score(outcomes, "yungKai"));
-q1a4.addEventListener("click", score(outcomes, "laufey"));
+//question 1
+q1a1.addEventListener("click", function() {
+  score(outcomes, "waveToEarth");
+  question();
+});
+q1a2.addEventListener("click", function() {
+  score(outcomes, "keshi");
+  question();
+});
+q1a2.addEventListener("click", function() {
+  score(outcomes, "grentperez");
+  question();
+});
+q1a3.addEventListener("click", function() {
+  score(outcomes, "yungKai");
+  question();
+});
+q1a4.addEventListener("click", function() {
+  score(outcomes, "laufey");
+  question();
+});
 
-q2a1.addEventListener("click", score(outcomes, "grentperez"));
-q2a2.addEventListener("click", score(outcomes, "yungKai"));
-q2a2.addEventListener("click", score(outcomes, "waveToEarth"));
-q2a3.addEventListener("click", score(outcomes, "laufey"));
-q2a4.addEventListener("click", score(outcomes, "keshi"));
+//question 2
+q2a1.addEventListener("click", function() {
+  score(outcomes, "grentperez");
+  question();
+});
+q2a2.addEventListener("click", function() {
+  score(outcomes, "yungKai");
+  question();
+});
+q2a2.addEventListener("click", function() {
+  score(outcomes, "waveToEarth");
+  question();
+});
+q2a3.addEventListener("click", function() {
+  score(outcomes, "laufey");
+  question();
+});
+q2a4.addEventListener("click", function() {
+  score(outcomes, "keshi");
+  question();
+});
 
-q3a1.addEventListener("click", score(outcomes, "laufey"));
-q3a2.addEventListener("click", score(outcomes, "keshi"));
-q3a2.addEventListener("click", score(outcomes, "waveToEarth"));
-q3a3.addEventListener("click", score(outcomes, "yungKai"));
-q3a3.addEventListener("click", score(outcomes, "waveToEarth"));
-q3a4.addEventListener("click", score(outcomes, "grentperez"));
+//question 3
+q3a1.addEventListener("click", function() {
+  score(outcomes, "laufey");
+  question();
+});
+q3a2.addEventListener("click", function() {
+  score(outcomes, "keshi");
+  question();
+});
+q3a2.addEventListener("click", function() {
+  score(outcomes, "waveToEarth");
+  question();
+});
+q3a3.addEventListener("click", function() {
+  score(outcomes, "yungKai");
+  question();
+});
+q3a3.addEventListener("click", function() {
+  score(outcomes, "waveToEarth");
+  question();
+});
+q3a4.addEventListener("click", function() {
+  score(outcomes, "grentperez");
+  question();
+});
