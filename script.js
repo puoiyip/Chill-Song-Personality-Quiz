@@ -23,6 +23,8 @@ var q3a2 = document.getElementById("q3a2");
 var q3a3 = document.getElementById("q3a3");
 var q3a4 = document.getElementById("q3a4");
 
+var max;
+
 function score(obj, person) {
   obj[person] += 1;
   console.log("score = " +obj[person]);
@@ -36,12 +38,14 @@ function question() {
     console.log("the quiz is done")
     highestScore();
     findResult();
+    console.log(max);
   }
 }
 function highestScore() {
   var scoreArray = Object.values(outcomes); //takes the values of the properties and makes them into an array
   console.log(scoreArray);
-  var max = Math.max(scoreArray); 
+  max = Math.max(...scoreArray); 
+  return max;
 }
 function findResult() {
   if (outcomes.laufey == max) {
