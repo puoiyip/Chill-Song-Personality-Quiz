@@ -23,23 +23,15 @@ var q3a2 = document.getElementById("q3a2");
 var q3a3 = document.getElementById("q3a3");
 var q3a4 = document.getElementById("q3a4");
 
+var result = document.getElementById("result");
+var restart = document.getElementById("restart");
+
 var max;
 
 function score(obj, person) {
   obj[person] += 1;
-  console.log("score = " +obj[person]);
-  console.log("laufey = " +outcomes.laufey)
+  console.log(person +"score = " +obj[person]);
   return obj[person];
-}
-function question() {
-  quesCount += 1;
-  console.log("question = " + quesCount);
-  if (quesCount >= 3) {
-    console.log("the quiz is done")
-    highestScore();
-    findResult();
-    console.log(max);
-  }
 }
 function highestScore() {
   var scoreArray = Object.values(outcomes); //takes the values of the properties and makes them into an array
@@ -50,17 +42,56 @@ function highestScore() {
 function findResult() {
   if (outcomes.laufey == max) {
     console.log("Promise by Laufey");
+    result.innerHTML = "Promise by Laufey";
+    
   } else if (outcomes.grentperez == max) {
-    console.log("Us Without Me by grentperez");
+    console.log("Movie Scene by grentperez");
+    result.innerHTML = "Movie Scene by grentperez";
+
   } else if (outcomes.keshi == max) {
     console.log("LIMBO by keshi");
+    result.innerHTML = "LIMBO by keshi";
+    
   } else if (outcomes.yungKai == max) {
     console.log("blue by yung kai");
+    result.innerHTML = "blue by yung kai";
+
   } else if (outcomes.waveToEarth == max) {
     console.log("bad. by wave to earth");
+    result.innerHTML = "bad. by wave to earth";
+
   } else {
     console.log("error");
+    result.innerHTML = "error";
   }
+}
+function question() {
+  quesCount += 1;
+  console.log("question = " + quesCount);
+  if (quesCount >= 3 && q1a1.disabled == true && q2a1.disabled == true && q3a1.disabled == true) {
+    console.log("the quiz is done");
+    highestScore();
+    findResult();
+    console.log(max);
+  }
+}
+function disableQ1() {
+  q1a1.disabled = true;
+  q1a2.disabled = true;
+  q1a3.disabled = true;
+  q1a4.disabled = true;
+}
+function disableQ2() {
+  q2a1.disabled = true;
+  q2a2.disabled = true;
+  q2a3.disabled = true;
+  q2a4.disabled = true;
+}
+function disableQ3() {
+  q3a1.disabled = true;
+  q3a2.disabled = true;
+  q3a3.disabled = true;
+  q3a4.disabled = true;
 }
 
 //question 1
@@ -132,3 +163,27 @@ q3a4.addEventListener("click", function() {
   score(outcomes, "grentperez");
   question();
 });
+
+restart.addEventListener("click", function() {
+  outcomes.laufey = 0;
+  outcomes.grentperez = 0;
+  outcomes.yungKai = 0;
+  outcomes.keshi = 0;
+  outcomes.waveToEarth = 0;
+  max = 0;
+  quesCount = 0;
+  result.innerHTML = "Your Result Is...";
+  q1a1.disabled = false;
+  q1a2.disabled = false;
+  q1a3.disabled = false;
+  q1a4.disabled = false;
+  q2a1.disabled = false;
+  q2a2.disabled = false;
+  q2a3.disabled = false;
+  q2a4.disabled = false;
+  q3a1.disabled = false;
+  q3a2.disabled = false;
+  q3a3.disabled = false;
+  q3a4.disabled = false;
+  
+})

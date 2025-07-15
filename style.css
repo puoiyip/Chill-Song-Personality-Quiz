@@ -1,7 +1,8 @@
 /* STYLE SECTIONING TAGS */
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 2em;
+  background-color: #FCEFD9;
 }
 
 /* STYLE TEXT */
@@ -9,30 +10,53 @@ h1 {
   font-style: italic;
   color: #0d9c90;
 }
-
 h2 {
   margin-top: 2em; 
 }
 
+
 /* STYLE FLEX CONTAINER */
 .question {
   display: flex;
-  /* uncomment the next line to center the questions and answers */
-  /* justify-content: center; */
+  justify-content: center;
   margin-top: 2em;
 }
   
 /* STYLE FLEX ITEM */
 .answer-choice {
   margin: 5px;
+  width: 100%;
 }
 
 /* STYLE IMAGES */
 .answer-choice img {
-  height: 10em;
+  height: 15em;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* STYLE BUTTON */
 button { 
   margin-top: 5px;
+  background-color: #B33F62;
+  border: 0;
+  padding: 10px;
+  color: #FCEFD9;
+  font-family: "Kanit", sans-serif;
+  float: center;
+}
+button:hover {
+  transition: 0.5s ease;
+
+.results-page {
+  /* display: none; */
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  float: center;
+}
+a {
+  text-decoration: none;
+  color: #FCEFD9;
 }
