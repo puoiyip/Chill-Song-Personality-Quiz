@@ -26,6 +26,7 @@ h2 {
 .answer-choice {
   margin: 5px;
   width: 100%;
+  justify-content: center;
 }
 
 /* STYLE IMAGES */
@@ -43,20 +44,22 @@ button {
   padding: 10px;
   color: #FCEFD9;
   font-family: "Kanit", sans-serif;
-  float: center;
+  justify-content: center;
 }
-button:hover {
-  transition: 0.5s ease;
+button:hover .disabled{
+  transition: 0.3s ease;
+  background-color: #d76a8b;
 }
 .results-page {
-  /* display: none; */
-  /*position: sticky;*/
   width: 100%;
   height: 30em;
+  display: flex;
 }
-.column {
-  width:50%;
-  float: left;
+.results-page > div {
+  margin: 5%;
+}
+.hide {
+  /*display: none;*/
 }
 a {
   text-decoration: none;
@@ -64,12 +67,11 @@ a {
   z-index:0.5;
 }
 .results-page img {
-  width: 100%;
+  width: 30em;
   height: 30em;
   object-fit: cover;
-  float: center;
 }
-#restart {
+#restart-style {
   position: fixed;
   bottom: 10em;
 }
