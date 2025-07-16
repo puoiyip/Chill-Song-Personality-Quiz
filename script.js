@@ -7,6 +7,13 @@ var outcomes = {
   yungKai: 0,
   keshi: 0,
 }
+var laufeyOutcome = document.getElementById("laufey");
+var grentperezOutcome = document.getElementById("grentperez");
+var yungKaiOutcome = document.getElementById("yung-kai");
+var keshiOutcome = document.getElementById("keshi");
+var waveToEarthOutcome = document.getElementById("wave-to-earth");
+
+
 //answers
 var q1a1 = document.getElementById("q1a1");
 var q1a2 = document.getElementById("q1a2");
@@ -43,22 +50,27 @@ function findResult() {
   if (outcomes.laufey == max) {
     console.log("Promise by Laufey");
     result.innerHTML = "Promise by Laufey";
+    laufeyOutcome.style.display = "block";
     
   } else if (outcomes.grentperez == max) {
     console.log("Movie Scene by grentperez");
     result.innerHTML = "Movie Scene by grentperez";
+    grentperezOutcome.style.display = "block";
 
   } else if (outcomes.keshi == max) {
     console.log("LIMBO by keshi");
     result.innerHTML = "LIMBO by keshi";
+    keshiOutcome.style.display = "block";
     
   } else if (outcomes.yungKai == max) {
     console.log("blue by yung kai");
     result.innerHTML = "blue by yung kai";
+    yungKaiOutcome.style.display = "block";
 
   } else if (outcomes.waveToEarth == max) {
     console.log("bad. by wave to earth");
     result.innerHTML = "bad. by wave to earth";
+    waveToEarthOutcome.style.display = "block";
 
   } else {
     console.log("error");

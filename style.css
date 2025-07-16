@@ -8,12 +8,22 @@ body {
 /* STYLE TEXT */
 h1 {
   font-style: italic;
-  color: #0d9c90;
+  color: #0C0A3E;
+  text-align: center;
 }
 h2 {
   margin-top: 2em; 
+  background-color: #F9564F;
+  padding: 1em;
+  color: #0C0A3E;
+  border-radius: 1em;
+  text-align: center;
+  font-size: 36px;
 }
-
+p {
+  color: #0C0A3E;
+  text-align: center;
+}
 
 /* STYLE FLEX CONTAINER */
 .question {
@@ -38,17 +48,26 @@ h2 {
 
 /* STYLE BUTTON */
 button { 
-  margin-top: 5px;
   background-color: #B33F62;
   border: 0;
   padding: 10px;
   color: #FCEFD9;
   font-family: "Kanit", sans-serif;
-  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin: auto;
+  display: block;
+  margin-top: 5px;
+  border-radius: 0.5em;
 }
 button:hover .disabled{
   transition: 0.3s ease;
   background-color: #d76a8b;
+}
+.disabled {
+  display: none;
+  cursor: not-allowed;
 }
 .results-page {
   width: 100%;
@@ -59,7 +78,7 @@ button:hover .disabled{
   margin: 5%;
 }
 .hide {
-  /*display: none;*/
+  display: none;
 }
 a {
   text-decoration: none;
