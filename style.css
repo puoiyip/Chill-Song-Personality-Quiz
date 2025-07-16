@@ -77,7 +77,19 @@ button:hover .disabled{
 .results-page > div {
   margin: 5%;
 }
-.hide {
+#laufey {
+  display: none;
+}
+#grentperez {
+  display: none;
+}
+#yung-kai {
+  display: none;
+}
+#wave-to-earth {
+  display: none;
+}
+#keshi {
   display: none;
 }
 a {
