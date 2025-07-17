@@ -65,7 +65,7 @@ function findResult() {
   } else if (outcomes.yungKai == max) {
     console.log("blue by yung kai");
     result.innerHTML = "blue by yung kai";
-    yungKaiOutcome.style.display = "block";
+    document.getElementById("yung-kai").style.display = "block";
 
   } else if (outcomes.waveToEarth == max) {
     console.log("bad. by wave to earth");
