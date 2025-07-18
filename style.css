@@ -74,6 +74,7 @@ button:hover .disabled{
   height: 30em;
   display: flex;
   position: fixed;
+  top: 0;
 }
 .results-page > div {
   margin: 5%;
