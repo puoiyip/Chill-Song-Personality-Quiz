@@ -79,6 +79,7 @@ button:hover .disabled{
   margin: 5%;
 }
 #laufey {
+  display: none;
 }
 #grentperez {
   display: none;
