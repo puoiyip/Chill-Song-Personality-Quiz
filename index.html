@@ -29,7 +29,7 @@
 
 	<header>
 		<h1>Which Chill Song Are You?</h1>
-		<p>You will be assigned a song from my chill playlist based on who you are!</p>
+		<p class="align-center">You will be assigned a song from my chill playlist based on who you are! Descriptions are by no means accurate and are purely for fun!</p>
 	</header>
 
 	<main>
@@ -119,77 +119,126 @@
         <button id="q3a4" onclick="disableQ3()">Creative & Expressive</button>
       </div>
 
-    </div> 
-    
-    <h2 id="result">Your result is...</h2>
-
-    <div>
-      <button id="restart">Restart</button>
-    </div>
-
-    <div>
-      <button><a href="quiz.html">Results</a></button>
     </div>
     
-    <div class="results-page" id="laufey">
+    <h2>Which photo represents your mood?</h2>
+    <div class="question">
+      
+      <div class="answer-choice">
+        <img src="images/cozy book.jpg" alt="An aesthetic photo of a book and a mug on a bed with fairy lights">
+        <br>
+        <button id="q4a1" onclick="disableQ4()">Relaxed</button>
+      </div>
+      
+      <div class="answer-choice">
+        <img src="images/heart sheet music.jpg" alt="A rose on top of music sheets with a red glass heart nearby">
+        <br>
+        <button id="q4a2" onclick="disableQ4()">Romantic</button>
+      </div>
+
+      <div class="answer-choice">
+        <img src="images/loneliness.jpg" alt="A dull photo of a lone bird perched on a branch">
+        <br>
+        <button id="q4a3" onclick="disableQ4()">Lonely</button>
+      </div>
+
+      <div class="answer-choice">
+        <img src="images/masquerade.jpg" alt="A collection of decorative masquerade masks">
+        <br>
+        <button id="q4a4" onclick="disableQ4()">Uncertain</button>
+      </div>
+      
+    </div>
+   
+    <div>
+      <button id="result" onclick="findResult()">Results</button>
+    </div>
+
+    <div id="laufey">
+    <div class="results-page">
       <div>
         <img src="images/laufey.jpg" alt="Laufey - a Chinese-Icelandic woman with brown hair - holding a red guitar in her lap while sitting next to a piano">
       </div>
       <div>
+        <h2 class="results-text">Promise</h2>
+        <h3>Laufey</h3>
+        <p><i>"It hurts to be something <br>It's worse to be nothing with you"</i></p>
+        <p>You are calm and collected, and a yearner at heart - perhaps there is someone you've distanced yourself from but just can't let go of quite yet. Remember to keep being the diva that you are!</p>
         <div>
-          <h2>Promise</h2>
-          <h3>Laufey</h3>
-          <p> </p>
+          <button class="restart" onclick="restartButton()">Restart</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="grentperez">
+      <div class="results-page">
+        <div>
+          <img src="images/grentperez.jpg" alt="Grant Perez (known as grentperez) smiling at the camera">
         </div>
         <div>
-          <button id="restart">Restart</button>
+          <h2 class="results-text">Movie Scene</h2>
+          <h3>grentperez</h3>
+          <p><i>"Crash our love in the Atlantic<br>I wanna be hopelessly romantic with you"</i></p>
+          <p>You're either a very smooth and charismatic person straight out of a movie scene (haha get it...) or the exact opposite... Regardless, you seem like a fun person to be around!</p>
+          <div>
+            <button class="restart" onclick="restartButton()">Restart</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="results-page" id="grentperez">
-      <div>
-        <img src="images/grentperez.jpg" alt="Grant Perez (known as grentperez) smiling at the camera">
-      </div>
-      <div>
-        <h2>Movie Scene</h2>
-        <h3>grentperez</h3>
-        <p> </p>
-      </div>
-    </div>
-
-    <div class="results-page" id="keshi">
-      <div>
-        <img src="images/keshi.png" alt="A black and white photo of a man with shoulder-length wavy hair (keshi) staring into the camera melancholically">
-      </div>
-      <div>
-        <h2>LIMBO</h2>
-        <h3>keshi</h3>
-        <p> </p>
+    <div id="keshi">
+      <div class="results-page">
+        <div>
+          <img src="images/keshi.png" alt="A black and white photo of a man with shoulder-length wavy hair (keshi) staring into the camera melancholically">
+        </div>
+        <div>
+          <h2 class="results-text">LIMBO</h2>
+          <h3>keshi</h3>
+          <p><i>"Looked in my demons and saw myself <br>Put all my meaning in someone else" </i></p>
+          <p>You give off nonchalant and easygoing vibes. Maybe things aren't working our the way you wanted them to go - that's okay! Keep your head up and keep going. In the meantime, this song might resonate with you.</p>
+          <div>
+            <button class="restart" onclick="restartButton()">Restart</button>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="results-page" id="yung-kai">
-      <div>
-        <img src="images/yung kai.jpg" alt="A concert photo of yung kai performing">
-      </div>
-      <div>
-        <h2>blue</h2>
-        <h3>yung kai</h3>
-        <p> </p>
-      </div>
-    </div>
-
-    <div class="results-page" id="wave-to-earth">
-      <div>
-        <img src="images/wave to earth.jpg" alt="A concert photo of three guys: two with a guitar and one playing the drums">
-      </div>
-      <div>
-        <h2>bad.</h2>
-        <h3>wave to earth</h3>
-        <p> </p>
+  
+    <div id="yung-kai">
+      <div class="results-page">
+        <div>
+          <img src="images/yung kai.jpg" alt="A concert photo of yung kai performing">
+        </div>
+        <div>
+          <h2 class="results-text">blue</h2>
+          <h3>yung kai</h3>
+          <p><i>"I'll leave my heart with your air<br>So let me fly with you<br>Will you be forever with me?"</i></p>
+          <p>You're a very sweet person who loves daydreaming. You seem like the type of person who gives the best and most comforting hugs.</p>
+          <div>
+            <button class="restart" onclick="restartButton()">Restart</button>
+          </div>
+        </div>
       </div>
     </div>
+    
+    <div id="wave-to-earth">
+      <div class="results-page">
+        <div>
+          <img src="images/wave to earth.jpg" alt="A concert photo of three guys: two with a guitar and one playing the drums">
+        </div>
+        <div>
+          <h2 class="results-text">bad</h2>
+          <h3>wave to earth</h3>
+          <p><i>"How could my day be bad when I'm with you?"</i></p>
+          <p>Reliable and calm, you are a great person to be around. I would actually trust you to catch me during a trust fall.</p>
+          <div>
+            <button class="restart" onclick="restartButton()">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
   </main>
   </body>
