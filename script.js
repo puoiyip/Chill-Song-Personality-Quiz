@@ -30,8 +30,12 @@ var q3a2 = document.getElementById("q3a2");
 var q3a3 = document.getElementById("q3a3");
 var q3a4 = document.getElementById("q3a4");
 
+var q4a1 = document.getElementById("q4a1");
+var q4a2 = document.getElementById("q4a2");
+var q4a3 = document.getElementById("q4a3");
+var q4a4 = document.getElementById("q4a4");
+
 var result = document.getElementById("result");
-var restart = document.getElementById("restart");
 
 var max;
 
@@ -49,42 +53,38 @@ function highestScore() {
 function findResult() {
   if (outcomes.laufey == max) {
     console.log("Promise by Laufey");
-    result.innerHTML = "Promise by Laufey";
     laufeyOutcome.style.display = "block";
     
   } else if (outcomes.grentperez == max) {
     console.log("Movie Scene by grentperez");
-    result.innerHTML = "Movie Scene by grentperez";
     grentperezOutcome.style.display = "block";
 
   } else if (outcomes.keshi == max) {
     console.log("LIMBO by keshi");
-    result.innerHTML = "LIMBO by keshi";
     keshiOutcome.style.display = "block";
     
   } else if (outcomes.yungKai == max) {
     console.log("blue by yung kai");
-    result.innerHTML = "blue by yung kai";
-    document.getElementById("yung-kai").style.display = "block";
+    yungKaiOutcome.style.display = "block";
 
   } else if (outcomes.waveToEarth == max) {
     console.log("bad. by wave to earth");
-    result.innerHTML = "bad. by wave to earth";
     waveToEarthOutcome.style.display = "block";
 
   } else {
     console.log("error");
-    result.innerHTML = "error";
   }
 }
 function question() {
   quesCount += 1;
   console.log("question = " + quesCount);
-  if (quesCount >= 3 && q1a1.disabled == true && q2a1.disabled == true && q3a1.disabled == true) {
+  if (quesCount >= 3 && q1a1.disabled == true && q2a1.disabled == true && q3a1.disabled == true && q4a1.disabled == true) {
     console.log("the quiz is done");
     highestScore();
-    findResult();
     console.log(max);
+    result.style.backgroundColor = "#B33F62";
+    result.style.cursor = "pointer";
+    result.style.transition = "0.3s ease";
   }
 }
 function disableQ1() {
@@ -92,20 +92,57 @@ function disableQ1() {
   q1a2.disabled = true;
   q1a3.disabled = true;
   q1a4.disabled = true;
+  q1a1.style.backgroundColor = "#d76a8b";
+  q1a2.style.backgroundColor = "#d76a8b";
+  q1a3.style.backgroundColor = "#d76a8b";
+  q1a4.style.backgroundColor = "#d76a8b";
+  q1a1.style.cursor = "not-allowed";
+  q1a2.style.cursor = "not-allowed";
+  q1a3.style.cursor = "not-allowed";
+  q1a4.style.cursor = "not-allowed";
 }
 function disableQ2() {
   q2a1.disabled = true;
   q2a2.disabled = true;
   q2a3.disabled = true;
   q2a4.disabled = true;
+  q2a1.style.backgroundColor = "#d76a8b";
+  q2a2.style.backgroundColor = "#d76a8b";
+  q2a3.style.backgroundColor = "#d76a8b";
+  q2a4.style.backgroundColor = "#d76a8b";
+  q2a1.style.cursor = "not-allowed";
+  q2a2.style.cursor = "not-allowed";
+  q2a3.style.cursor = "not-allowed";
+  q2a4.style.cursor = "not-allowed";
 }
 function disableQ3() {
   q3a1.disabled = true;
   q3a2.disabled = true;
   q3a3.disabled = true;
   q3a4.disabled = true;
+  q3a1.style.backgroundColor = "#d76a8b";
+  q3a2.style.backgroundColor = "#d76a8b";
+  q3a3.style.backgroundColor = "#d76a8b";
+  q3a4.style.backgroundColor = "#d76a8b";
+  q3a1.style.cursor = "not-allowed";
+  q3a2.style.cursor = "not-allowed";
+  q3a3.style.cursor = "not-allowed";
+  q3a4.style.cursor = "not-allowed";
 }
-
+function disableQ4() {
+  q4a1.disabled = true;
+  q4a2.disabled = true;
+  q4a3.disabled = true;
+  q4a4.disabled = true;
+  q4a1.style.backgroundColor = "#d76a8b";
+  q4a2.style.backgroundColor = "#d76a8b";
+  q4a3.style.backgroundColor = "#d76a8b";
+  q4a4.style.backgroundColor = "#d76a8b";
+  q4a1.style.cursor = "not-allowed";
+  q4a2.style.cursor = "not-allowed";
+  q4a3.style.cursor = "not-allowed";
+  q4a4.style.cursor = "not-allowed";
+}
 //question 1
 q1a1.addEventListener("click", function() {
   score(outcomes, "waveToEarth");
@@ -176,7 +213,29 @@ q3a4.addEventListener("click", function() {
   question();
 });
 
-restart.addEventListener("click", function() {
+//question 4
+q4a1.addEventListener("click", function() {
+  score(outcomes, "waveToEarth");
+  question();
+});
+q4a2.addEventListener("click", function() {
+  score(outcomes, "grentperez");
+  question();
+});
+q4a3.addEventListener("click", function() {
+  score(outcomes, "yungKai");
+  question();
+});
+q4a3.addEventListener("click", function() {
+  score(outcomes, "laufey");
+  question();
+});
+q4a3.addEventListener("click", function() {
+  score(outcomes, "keshi");
+  question();
+});
+
+function restartButton() {
   outcomes.laufey = 0;
   outcomes.grentperez = 0;
   outcomes.yungKai = 0;
@@ -184,18 +243,65 @@ restart.addEventListener("click", function() {
   outcomes.waveToEarth = 0;
   max = 0;
   quesCount = 0;
-  result.innerHTML = "Your Result Is...";
+  
   q1a1.disabled = false;
   q1a2.disabled = false;
   q1a3.disabled = false;
   q1a4.disabled = false;
+  q1a1.style.backgroundColor = "#B33F62";
+  q1a2.style.backgroundColor = "#B33F62";
+  q1a3.style.backgroundColor = "#B33F62";
+  q1a4.style.backgroundColor = "#B33F62";
+  q1a1.style.cursor = "pointer";
+  q1a2.style.cursor = "pointer";
+  q1a3.style.cursor = "pointer";
+  q1a4.style.cursor = "pointer";
+  
   q2a1.disabled = false;
   q2a2.disabled = false;
   q2a3.disabled = false;
   q2a4.disabled = false;
+  q2a1.style.backgroundColor = "#B33F62";
+  q2a2.style.backgroundColor = "#B33F62";
+  q2a3.style.backgroundColor = "#B33F62";
+  q2a4.style.backgroundColor = "#B33F62";
+  q2a1.style.cursor = "pointer";
+  q2a2.style.cursor = "pointer";
+  q2a3.style.cursor = "pointer";
+  q2a4.style.cursor = "pointer";
+  
   q3a1.disabled = false;
   q3a2.disabled = false;
   q3a3.disabled = false;
   q3a4.disabled = false;
+  q3a1.style.backgroundColor = "#B33F62";
+  q3a2.style.backgroundColor = "#B33F62";
+  q3a3.style.backgroundColor = "#B33F62";
+  q3a4.style.backgroundColor = "#B33F62";
+  q3a1.style.cursor = "pointer";
+  q3a2.style.cursor = "pointer";
+  q3a3.style.cursor = "pointer";
+  q3a4.style.cursor = "pointer";
   
-})
+  q4a1.disabled = false;
+  q4a2.disabled = false;
+  q4a3.disabled = false;
+  q4a4.disabled = false;
+  q4a1.style.backgroundColor = "#B33F62";
+  q4a2.style.backgroundColor = "#B33F62";
+  q4a3.style.backgroundColor = "#B33F62";
+  q4a4.style.backgroundColor = "#B33F62";
+  q4a1.style.cursor = "pointer";
+  q4a2.style.cursor = "pointer";
+  q4a3.style.cursor = "pointer";
+  q4a4.style.cursor = "pointer";
+  
+  laufeyOutcome.style.display = "none";
+  grentperezOutcome.style.display = "none";
+  keshiOutcome.style.display = "none";
+  yungKaiOutcome.style.display = "none";
+  waveToEarthOutcome.style.display = "none";
+
+  result.style.backgroundColor = "#d76a8b";
+  result.style.cursor = "not-allowed";
+}
